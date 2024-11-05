@@ -8,6 +8,14 @@ Route::get('/', function () {
     return Inertia::render('landing-pages/index');
 })->name('home');
 
+Route::get('/blogs', function () {
+    return Inertia::render('blogs/index');
+});
+
+Route::get('/blogs/1', function () {
+    return Inertia::render('blogs/post');
+});
+
 Route::get('/dashboard', function () {
     return Inertia::render('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
